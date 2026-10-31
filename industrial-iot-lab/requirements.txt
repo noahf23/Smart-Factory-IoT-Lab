@@ -1,0 +1,2 @@
+# I pin PyModbus to the version used for the verified lab results.
+pymodbus==3.16.1

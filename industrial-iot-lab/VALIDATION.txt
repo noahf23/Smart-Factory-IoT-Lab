@@ -1,0 +1,115 @@
+RECORDED DEVELOPMENT VERIFICATION
+Date: 2026-10-31
+Python 3.14.7 / PyModbus 3.16.1
+Isolated loopback endpoint; temporary history and fault controls.
+
+2026-10-31T19:48:10.797+00:00 | Meter 1: Main incomer | [WARMUP]
+  voltage: 480.0 V | current: 12.6 A | temperature: 35.0 deg C
+2026-10-31T19:48:10.799+00:00 | Meter 2: Production feeder | [WARMUP]
+  voltage: 480.0 V | current: 32.1 A | temperature: 42.0 deg C
+  [WARNING] HIGH CURRENT: 32.1 A exceeds 25.0 A (untrusted freshness)
+2026-10-31T19:48:10.800+00:00 | Meter 3: Test station | [WARMUP]
+  voltage: 480.0 V | current: 18.1 A | temperature: 72.0 deg C
+  [WARNING] HIGH TEMPERATURE: 72.0 deg C exceeds 60.0 deg C (untrusted freshness)
+2026-10-31T19:48:10.801+00:00 | Meter 4: Auxiliary panel | [WARMUP]
+  voltage: 510.0 V | current: 35.1 A | temperature: 75.0 deg C
+  [WARNING] HIGH VOLTAGE: 510.0 V exceeds 504.0 V (untrusted freshness)
+  [WARNING] HIGH CURRENT: 35.1 A exceeds 25.0 A (untrusted freshness)
+  [WARNING] HIGH TEMPERATURE: 75.0 deg C exceeds 60.0 deg C (untrusted freshness)
+Summary: 0 OK, 0 WARNING, 4 WARMUP, 0 STALE, 0 COMM_ERROR
+2026-10-31T19:48:10.956+00:00 | Meter 1: Main incomer | [OK]
+  voltage: 480.0 V | current: 12.7 A | temperature: 35.0 deg C
+2026-10-31T19:48:10.958+00:00 | Meter 2: Production feeder | [WARNING]
+  voltage: 480.0 V | current: 32.2 A | temperature: 42.0 deg C
+  [WARNING] HIGH CURRENT: 32.2 A exceeds 25.0 A
+2026-10-31T19:48:10.959+00:00 | Meter 3: Test station | [WARNING]
+  voltage: 480.0 V | current: 18.2 A | temperature: 72.0 deg C
+  [WARNING] HIGH TEMPERATURE: 72.0 deg C exceeds 60.0 deg C
+2026-10-31T19:48:10.960+00:00 | Meter 4: Auxiliary panel | [WARNING]
+  voltage: 510.0 V | current: 35.2 A | temperature: 75.0 deg C
+  [WARNING] HIGH VOLTAGE: 510.0 V exceeds 504.0 V
+  [WARNING] HIGH CURRENT: 35.2 A exceeds 25.0 A
+  [WARNING] HIGH TEMPERATURE: 75.0 deg C exceeds 60.0 deg C
+Summary: 1 OK, 3 WARNING, 0 WARMUP, 0 STALE, 0 COMM_ERROR
+2026-10-31T19:48:11.581+00:00 | Meter 1: Main incomer | [OK]
+  voltage: 480.0 V | current: 12.9 A | temperature: 35.0 deg C
+2026-10-31T19:48:11.595+00:00 | Meter 2: Production feeder | [COMM_ERROR]
+  Last confirmed source update: 2026-10-31T19:48:10.958+00:00
+  Modbus Error: ExceptionResponse(dev_id=2, function_code=131, exception_code=11)
+2026-10-31T19:48:11.597+00:00 | Meter 3: Test station | [STALE]
+  voltage: 480.0 V | current: 18.2 A | temperature: 72.0 deg C
+  [WARNING] HIGH TEMPERATURE: 72.0 deg C exceeds 60.0 deg C (untrusted freshness)
+  Last confirmed source update: 2026-10-31T19:48:10.959+00:00
+2026-10-31T19:48:11.598+00:00 | Meter 4: Auxiliary panel | [WARNING]
+  voltage: 510.0 V | current: 35.4 A | temperature: 75.0 deg C
+  [WARNING] HIGH VOLTAGE: 510.0 V exceeds 504.0 V
+  [WARNING] HIGH CURRENT: 35.4 A exceeds 25.0 A
+  [WARNING] HIGH TEMPERATURE: 75.0 deg C exceeds 60.0 deg C
+Summary: 1 OK, 1 WARNING, 0 WARMUP, 1 STALE, 1 COMM_ERROR
+2026-10-31T19:48:11.876+00:00 | Meter 1: Main incomer | [OK]
+  voltage: 480.0 V | current: 12.7 A | temperature: 35.0 deg C
+2026-10-31T19:48:11.878+00:00 | Meter 2: Production feeder | [WARNING]
+  [RECOVERED] Source heartbeat is advancing again.
+  voltage: 480.0 V | current: 32.2 A | temperature: 42.0 deg C
+  [WARNING] HIGH CURRENT: 32.2 A exceeds 25.0 A
+2026-10-31T19:48:11.880+00:00 | Meter 3: Test station | [WARNING]
+  [RECOVERED] Source heartbeat is advancing again.
+  voltage: 480.0 V | current: 18.2 A | temperature: 72.0 deg C
+  [WARNING] HIGH TEMPERATURE: 72.0 deg C exceeds 60.0 deg C
+2026-10-31T19:48:11.881+00:00 | Meter 4: Auxiliary panel | [WARNING]
+  voltage: 510.0 V | current: 35.2 A | temperature: 75.0 deg C
+  [WARNING] HIGH VOLTAGE: 510.0 V exceeds 504.0 V
+  [WARNING] HIGH CURRENT: 35.2 A exceeds 25.0 A
+  [WARNING] HIGH TEMPERATURE: 75.0 deg C exceeds 60.0 deg C
+Summary: 1 OK, 3 WARNING, 0 WARMUP, 0 STALE, 0 COMM_ERROR
+2026-10-31T19:48:11.888+00:00 | Meter 1: Main incomer | [COMM_ERROR]
+  Last confirmed source update: 2026-10-31T19:48:11.876+00:00
+  [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-10-31T19:48:11.889+00:00 | Meter 2: Production feeder | [COMM_ERROR]
+  Last confirmed source update: 2026-10-31T19:48:11.878+00:00
+  Modbus Error: [Connection] ModbusTcpClient 127.0.0.1:57809
+2026-10-31T19:48:11.890+00:00 | Meter 3: Test station | [COMM_ERROR]
+  Last confirmed source update: 2026-10-31T19:48:11.880+00:00
+  Gateway unavailable; start or restart the simulator.
+2026-10-31T19:48:12.395+00:00 | Meter 4: Auxiliary panel | [COMM_ERROR]
+  Last confirmed source update: 2026-10-31T19:48:11.881+00:00
+  Gateway unavailable; start or restart the simulator.
+Summary: 0 OK, 0 WARNING, 0 WARMUP, 0 STALE, 4 COMM_ERROR
+2026-10-31T19:48:17.779+00:00 | Meter 1: Main incomer | [OK]
+  [RECOVERED] Source heartbeat is advancing again.
+  voltage: 480.0 V | current: 12.6 A | temperature: 35.0 deg C
+2026-10-31T19:48:17.808+00:00 | Meter 2: Production feeder | [WARNING]
+  [RECOVERED] Source heartbeat is advancing again.
+  voltage: 480.0 V | current: 32.1 A | temperature: 42.0 deg C
+  [WARNING] HIGH CURRENT: 32.1 A exceeds 25.0 A
+2026-10-31T19:48:17.809+00:00 | Meter 3: Test station | [WARNING]
+  [RECOVERED] Source heartbeat is advancing again.
+  voltage: 480.0 V | current: 18.1 A | temperature: 72.0 deg C
+  [WARNING] HIGH TEMPERATURE: 72.0 deg C exceeds 60.0 deg C
+2026-10-31T19:48:17.810+00:00 | Meter 4: Auxiliary panel | [WARNING]
+  [RECOVERED] Source heartbeat is advancing again.
+  voltage: 510.0 V | current: 35.1 A | temperature: 75.0 deg C
+  [WARNING] HIGH VOLTAGE: 510.0 V exceeds 504.0 V
+  [WARNING] HIGH CURRENT: 35.1 A exceeds 25.0 A
+  [WARNING] HIGH TEMPERATURE: 75.0 deg C exceeds 60.0 deg C
+Summary: 1 OK, 3 WARNING, 0 WARMUP, 0 STALE, 0 COMM_ERROR
+2026-10-31T19:48:17.966+00:00 | Meter 1: Main incomer | [OK]
+  voltage: 480.0 V | current: 12.7 A | temperature: 35.0 deg C
+2026-10-31T19:48:17.967+00:00 | Meter 2: Production feeder | [WARNING]
+  voltage: 480.0 V | current: 32.2 A | temperature: 42.0 deg C
+  [WARNING] HIGH CURRENT: 32.2 A exceeds 25.0 A
+2026-10-31T19:48:17.968+00:00 | Meter 3: Test station | [WARNING]
+  voltage: 480.0 V | current: 18.2 A | temperature: 72.0 deg C
+  [WARNING] HIGH TEMPERATURE: 72.0 deg C exceeds 60.0 deg C
+2026-10-31T19:48:17.969+00:00 | Meter 4: Auxiliary panel | [WARNING]
+  voltage: 510.0 V | current: 35.2 A | temperature: 75.0 deg C
+  [WARNING] HIGH VOLTAGE: 510.0 V exceeds 504.0 V
+  [WARNING] HIGH CURRENT: 35.2 A exceeds 25.0 A
+  [WARNING] HIGH TEMPERATURE: 75.0 deg C exceeds 60.0 deg C
+Summary: 1 OK, 3 WARNING, 0 WARMUP, 0 STALE, 0 COMM_ERROR
+
+PASS: threshold boundaries; initial freshness; heartbeat wrap; malformed response; four devices; per-device faults; stale detection; recovery; gateway failure; 20 persisted observations; NULL failed measurements; interactive fault-control CLI; gateway restart and reconnection; rejected writes; CLI healthy/failure exits and argument validation.
+
+Expected fault-related diagnostic stderr:
+Connection to (127.0.0.1, 57809) failed: timed out
+Repeating....

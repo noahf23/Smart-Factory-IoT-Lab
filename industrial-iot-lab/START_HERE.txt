@@ -1,0 +1,20 @@
+INDUSTRIAL IoT MONITORING LAB - WINDOWS
+
+1. Extract All from the ZIP. Python 3.10+ must already be installed.
+2. Run SETUP.bat once. The dependency is bundled for offline installation.
+3. Run START_METER.bat and keep it open.
+4. Run MONITOR.bat for continuous monitoring.
+5. Run FAULT_DEMO.bat to freeze meter 3, disconnect meter 2, or restore all.
+6. Stop the monitor and simulator with Ctrl+C.
+
+The first scan shows WARMUP. After source heartbeats change, expect:
+1 OK, 3 WARNING, 0 WARMUP, 0 STALE, 0 COMM_ERROR.
+Frozen sources become STALE after roughly 10 seconds plus scan timing.
+Restoring a device can recover communication while high-reading warnings remain.
+Fault settings persist. Restore all devices before a new demonstration.
+
+READ_METER.bat runs two scans instead of continuous monitoring.
+VERIFY_LAB.bat runs isolated checks; deliberate error messages are expected.
+History: data/monitoring.sqlite3. Documentation: README.md.
+Exit code 1 means a stale/read failure occurred during the session, even if recovered.
+This is a simulated, read-only training lab with arbitrary warning thresholds.
